@@ -86,7 +86,7 @@ This is where the magic happens for daily, automated messages.
 2.  **Add a Cron Job Entry:** Add the following line to the end of the file. This example schedules the script to run every day at 7:00 AM.
 
     ```cron
-    0 7 * * * /usr/bin/python3 /path/to/your/daily-motivation/src/main.py >> /path/to/your/daily-motivation/cron.log 2>&1
+    0 7 * * * /usr/bin/python3 /path/to/your/daily-motivation/src/main.py >> /path/to/your/daily-motivation/daily-motivation.log 2>&1
     ```
     *   `/usr/bin/python3`: The full path to your Python 3 executable. You can find this by running `which python3`.
     *   `/path/to/your/daily-motivation/src/main.py`: **Crucially, replace this with the absolute path to your `main.py` script!**
