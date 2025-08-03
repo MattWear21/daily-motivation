@@ -30,7 +30,6 @@ First, you need to have Ollama installed and a local LLM model downloaded.
 *   **Download a Model:** For this project, we recommend a lightweight model like Gemma3 4B for quick responses. Open your terminal and run:
     ```bash
     ollama run gemma3:4b
-    # Or your preferred model, e.g., ollama run llama3
     ```
 
 ### 2. Set up a Discord Webhook
@@ -71,7 +70,7 @@ First, you need to have Ollama installed and a local LLM model downloaded.
 
 5.  **Run the Script Manually (Test):**
     ```bash
-    python3 main.py
+    python3 src/main.py
     ```
     You should see the motivational message printed in your terminal and also appear as a notification in your Discord channel!
 
@@ -87,9 +86,9 @@ This is where the magic happens for daily, automated messages.
 2.  **Add a Cron Job Entry:** Add the following line to the end of the file. This example schedules the script to run every day at 7:00 AM.
 
     ```cron
-    0 7 * * * /usr/bin/python3 /path/to/your/daily-motivation/main.py >> /path/to/your/daily-motivation/cron.log 2>&1
+    0 7 * * * /usr/bin/python3 /path/to/your/daily-motivation/src/main.py >> /path/to/your/daily-motivation/cron.log 2>&1
     ```
     *   `/usr/bin/python3`: The full path to your Python 3 executable. You can find this by running `which python3`.
-    *   `/path/to/your/daily-motivation/main.py`: **Crucially, replace this with the absolute path to your `main.py` script!**
+    *   `/path/to/your/daily-motivation/src/main.py`: **Crucially, replace this with the absolute path to your `main.py` script!**
 
 That's it! Your Linux server will now automatically run the `motivate.py` script at the scheduled time, providing you with a fresh dose of AI-powered motivation every day.
